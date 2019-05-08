@@ -12,7 +12,6 @@
 					<%if current_user%>
 					    <%= current_user.email %>
 					    <%= link_to "sign out", destroy_user_session_path, :class => "btn btn-secondary", :method => "delete"%>
-
 					<%else%>
 		                <%= link_to "sign in", new_user_session_path, :class => "btn btn-secondary"%>
 		                <%= link_to "sign up", new_user_registration_path, :class => "btn btn-secondary"%>

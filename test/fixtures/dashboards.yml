@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  cartier: MyString
+  operateur: MyString
+  numero: MyString
+  ref: MyString
+  net: 1
+  brut: 1
+  frais_operateur: 1
+  autre_frais: 1
+
+two:
+  nom: MyString
+  cartier: MyString
+  operateur: MyString
+  numero: MyString
+  ref: MyString
+  net: 1
+  brut: 1
+  frais_operateur: 1
+  autre_frais: 1

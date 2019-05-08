@@ -4,4 +4,6 @@ class HomeController < ApplicationController
   end
   def show
   end
+  def showuser
+  end
 end

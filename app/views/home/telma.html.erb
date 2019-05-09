@@ -1,0 +1,24 @@
+<%=render 'operators'%>
+<div class="top">
+	<table class="table table-striped">
+		<%= render 'table'%>
+	  <tbody>
+		<%current_user.dashboards.each do |dash|
+		i = 1
+		if dash.operateur == "Telma"%>
+			<tr>
+		      <th scope="row"><%=i%></th>
+		      <td><%=dash.nom%></td>
+		      <td><%=dash.cartier%></td>
+		      <td><%=dash.numero%></td>
+		      <td><%=dash.ref%></td>
+		      <td><%=dash.brut%></td>
+		      <td><%=dash.net%></td>
+		      <td><%=dash.frais_operateur%></td>
+		      <td><%=dash.autre_frais%></td>
+		    </tr>
+			<%end%>
+		<%end%>
+	  </tbody>
+	</table>
+</div>

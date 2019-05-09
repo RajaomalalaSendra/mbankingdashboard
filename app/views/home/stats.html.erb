@@ -1,0 +1,36 @@
+<!-- Code in ruby to totalize all of the person -->
+<% airtel=0
+orange=0
+telma=0
+autres=0
+total=0
+current_user.dashboards.each do |dash|
+	if dash.operateur == "Airtel"
+		airtel+=1
+	elsif dash.operateur == "Orange"
+	    orange+=1
+	elsif dash.operateur == 'Telma'
+	    telma+=1
+	else 
+	    autres+=1
+	end 
+end
+total = orange + telma + airtel + autres
+airtel_pourcentage = pourcentage(airtel,total)
+telma_pourcentage = pourcentage(telma,total)
+orange_pourcentage = pourcentage(orange,total)
+autres_pourcentage = pourcentage(autres,total)%>
+<h1>The stats</h1>
+<ul class="chart">
+  <li class="axis">
+    <div class="label">Very Good</div>
+    <div class="label">Good</div>
+    <div class="label">Average</div>
+    <div class="label">Bad</div>
+    <div class="label">Worst</div>
+  </li>
+ <%= show_percentage(airtel_pourcentage, "Airtel")%>
+ <%= show_percentage(orange_pourcentage, "Orange")%>
+ <%= show_percentage(telma_pourcentage, "Telma")%>
+ <%= show_percentage(autres_pourcentage, "Autres")%>
+</ul>

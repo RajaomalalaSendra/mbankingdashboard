@@ -1,2 +1,63 @@
-<h1>Dashboards#edit</h1>
-<p>Find me in app/views/dashboards/edit.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+		</div>
+		<div class="col-4">
+			<%= form_tag(dashboard_path, :method => "put")%>
+			<div class="field">
+		        <%= label_tag :Nom %><br />
+		        <%= text_field_tag :nom, @dashboard.nom%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Quartier %><br />
+		        <%= text_field_tag :cartier, @dashboard.cartier%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Operateur %><br />
+		        <%= text_field_tag :operateur, @dashboard.operateur%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Numero %><br />
+		        <%= text_field_tag :numero, @dashboard.numero%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Reference %><br />
+		        <%= text_field_tag :ref, @dashboard.ref%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Net %><br />
+		        <%= number_field_tag :net, @dashboard.net%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Brut %><br />
+		        <%= number_field_tag :brut, @dashboard.brut%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Frais_Operateur %><br />
+		        <%= number_field_tag :frais_operateur, @dashboard.frais_operateur%>
+		      </div>
+
+		      <div class="field">
+		        <%= label_tag :Autre_Frais %><br />
+		        <%= number_field_tag :autre_frais, @dashboard.autre_frais%>
+		      </div>
+
+		      <div class="field">
+		        <input type="hidden" name="user_id" id="user_id" value="<%= current_user.id %>">
+		      </div>
+
+		      <div class="actions">
+		        <%= submit_tag "Update", class: 'btn btn-success'%>
+		      </div>
+		</div>
+		<div class="col-4">
+		</div>
+	</div>
+</div>

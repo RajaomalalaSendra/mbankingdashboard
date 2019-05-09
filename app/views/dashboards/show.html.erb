@@ -1,2 +1,17 @@
-<h1>Dashboards#show</h1>
-<p>Find me in app/views/dashboards/show.html.erb</p>
+<div class="container">
+	    <div class="row">
+	    	<div class="col-4"></div>
+	        <div class="col-4">
+	        <p>	Nom: <%= @dashboard.nom %></p>
+	        <p>	Quartier: <%= @dashboard.cartier %></p>
+	         <p> Operateur: <%= @dashboard.operateur %></p>
+	          <p> Numero: <%= @dashboard.numero %></p>
+	         <p> Reference:  <%= @dashboard.ref%></p>
+	         <p> Brut:  <%= @dashboard.brut %></p>
+	          <p> Net: <%= @dashboard.net%></p>
+	          <p> Frais Operateur: <%= @dashboard.frais_operateur %></p>
+	           <p> Autre Frais: <%= @dashboard.autre_frais%></p>
+	           <%= link_to "Edit", :controller => "dashboards", :action => "edit", :id => @dashboard.id%></div>
+	           <div class="col-4"></div>		
+	    </div>
+</div>

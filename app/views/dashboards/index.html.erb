@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row bg-primary">
+        <div class="col-md-2">Nom</div>
+        <div class="col-md-2">Quartier</div>
+        <div class="col">Operateur</div>
+        <div class="col">Numero</div>	
+        <div class="col">Reference</div>
+        <div class="col">Brut</div>
+        <div class="col">Net</div>
+        <div class="col">Frais Operateur</div>
+        <div class="col">Autre Frais</div>
+        <div class="col bg-light"></div>	
+    </div>
+	<% @dashboards.each do |dash| %>
+	    <div class="row">
+	        <div class="col-md-2"><%= dash.nom %></div>
+	        <div class="col-md-2"><%= dash.cartier %></div>
+	        <div class="col"><%= dash.operateur %></div>
+	        <div class="col"><%= dash.numero %></div>	
+	        <div class="col"><%= dash.ref%></div>
+	        <div class="col"><%= dash.brut %></div>
+	        <div class="col"><%= dash.net%></div>
+	        <div class="col"><%= dash.frais_operateur %></div>
+	        <div class="col"><%= dash.autre_frais%></div>
+	        <div class="col"><%= link_to "Show", :controller => "dashboards", :action => "show", :id => dash.id%></div>		
+	    </div>
+	<% end %>
+</div>

@@ -56,4 +56,6 @@ class HomeController < ApplicationController
   end
   def dash_two_days_ago
   end
+  def contact
+  end
 end

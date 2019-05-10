@@ -2,9 +2,13 @@ module HomeHelper
 	# Calcul des pourcentages 
 	def pourcentage(nombre, total)
 		begin
-			number = "#{nombre}/#{total}"
-	    	pourcentage_nombre = (Rational(*(number.split('/').map( &:to_i )))*100).to_f
-	    	return pourcentage_nombre.round(2)
+			if total == 1 && nombre == 1
+				return 100.00
+			else
+				number = "#{nombre}/#{total}"
+	    		pourcentage_nombre = (Rational(*(number.split('/').map( &:to_i )))*100).to_f
+	    		return pourcentage_nombre.round(2)
+	    	end
 	    rescue ZeroDivisionError => e
 	    	return 0
 	    end

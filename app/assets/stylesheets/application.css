@@ -158,6 +158,6 @@ ul.chart {
   margin-left: 150px;
 }
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
 }

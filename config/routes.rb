@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :contacts
+  get 'contacts/index'
+  get 'contacts/show'
+  get 'contacts/new'
+  get 'contacts/edit'
   root "home#index"
   resource :home
   devise_for :users
@@ -37,5 +42,6 @@ Rails.application.routes.draw do
   get '/dash/aujourdhui', to: 'home#dash_today'
   get '/dash/hier', to: 'home#dash_yesterday'
   get '/dash/avanthier', to: 'home#dash_two_days_ago'
+  get '/moncontact/tout', to: 'home#contact'
   resources :dashboards
 end

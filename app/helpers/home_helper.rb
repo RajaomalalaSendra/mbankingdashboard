@@ -1,9 +1,13 @@
 module HomeHelper
 	# Calcul des pourcentages 
 	def pourcentage(nombre, total)
-		number = "#{nombre}/#{total}"
-	    pourcentage_nombre = (Rational(*(number.split('/').map( &:to_i )))*100).to_f
-	    return pourcentage_nombre.round(2)
+		begin
+			number = "#{nombre}/#{total}"
+	    	pourcentage_nombre = (Rational(*(number.split('/').map( &:to_i )))*100).to_f
+	    	return pourcentage_nombre.round(2)
+	    rescue ZeroDivisionError => e
+	    	return 0
+	    end
 	end
 	def show_percentage(pourcentage, title)
 	  if pourcentage >= 75 && pourcentage < 100
@@ -26,4 +30,30 @@ module HomeHelper
 		  </li>".html_safe
  	  end
     end
+    def getToday
+    	date = Date.today
+		current_user.dashboards.where(created_at: date.midnight..date.end_of_day)
+	end
+	def getYesterday
+    	date = Date.today - 1
+		current_user.dashboards.where(created_at: date.midnight..date.end_of_day)
+	end
+	def getTwoDaysAgo
+		date = Date.today - 2
+		current_user.dashboards.where(created_at: date.midnight..date.end_of_day)
+	end
+	def getDaysAgo(d)
+		date = Date.today - d
+		current_user.dashboards.where(created_at: date.midnight..date.end_of_day)
+	end
+	def getWeeksAgo(w)
+		date = Date.today - (w*7) 
+		date_before = Date.today - ((w+1)*7)
+		current_user.dashboards.where(created_at: date_before.midnight..date.end_of_day)
+	end
+	def getAMonthAgo(m)
+		date = Date.today - (30*m) 
+		date_before = Date.today - (30*(m+1))
+		current_user.dashboards.where(created_at: date_before.midnight..date.end_of_day)
+	end
 end

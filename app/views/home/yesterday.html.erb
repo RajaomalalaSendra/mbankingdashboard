@@ -4,12 +4,12 @@ orange=0
 telma=0
 autres=0
 total=0
-current_user.dashboards.each do |dash|
-	if dash.operateur == "Airtel"
+getYesterday().each do |yesterday|
+	if yesterday.operateur == "Airtel"
 		airtel+=1
-	elsif dash.operateur == "Orange"
+	elsif yesterday.operateur == "Orange"
 	    orange+=1
-	elsif dash.operateur == 'Telma'
+	elsif yesterday.operateur == 'Telma'
 	    telma+=1
 	else 
 	    autres+=1
@@ -22,7 +22,7 @@ orange_pourcentage = pourcentage(orange,total)
 autres_pourcentage = pourcentage(autres,total)%>
 <%= render 'getdate'%>
 <div class="container top">
-<h1>The stats Tout</h1>
+<h1>The stats Hier</h1>
 <ul class="chart">
   <li class="axis">
     <div class="label">Very Good</div>

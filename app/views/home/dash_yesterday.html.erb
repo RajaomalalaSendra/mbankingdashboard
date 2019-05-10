@@ -1,4 +1,4 @@
-<%= render 'left_sidebar'%>
+<%= render 'dashboards/left_sidebar'%>
 <div class="container top">
 <table class="table table-striped">
   <thead class="bg-primary">
@@ -14,7 +14,7 @@
 	</tr>
   </thead>
   <tbody>
-	<%current_user.dashboards.each do |dash|%>
+	<%getYesterday().each do |dash|%>
 		<tr>
 	      <td><%=dash.nom%></td>
 	      <td><%=dash.cartier%></td>
@@ -26,7 +26,7 @@
 	      <td><%=dash.autre_frais%></td>
 	      <td><%= link_to "Show", :controller => "dashboards", :action => "show", :id => dash.id%></td>
 	    </tr>
-		<%end%>
+	<%end%>
   </tbody>
 </table>
 </div>

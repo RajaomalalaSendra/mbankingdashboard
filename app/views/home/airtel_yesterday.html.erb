@@ -4,7 +4,7 @@
 		<%= render 'table'%>
 		<%= render 'byoperateur_nav_airtel'%>
 	  <tbody>
-		<%current_user.dashboards.each do |dash|
+		<%getYesterday().each do |dash|
 		i = 1
 		if dash.operateur == "Airtel"%>
 			<tr>

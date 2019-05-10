@@ -2,11 +2,11 @@
 <div class="top">
 	<table class="table table-striped">
 		<%= render 'table'%>
-		<%= render 'byoperateur_nav_airtel'%>
+		<%= render 'byoperateur_nav_autres'%>
 	  <tbody>
-		<%current_user.dashboards.each do |dash|
+		<%getTwoDaysAgo().each do |dash|
 		i = 1
-		if dash.operateur == "Airtel"%>
+		if dash.operateur != "Airtel" && dash.operateur != "Orange" && dash.operateur != "Telma"%>
 			<tr>
 		      <th scope="row"><%=i%></th>
 		      <td><%=dash.nom%></td>

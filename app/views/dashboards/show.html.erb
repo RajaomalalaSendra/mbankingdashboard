@@ -1,17 +1,23 @@
 <div class="container">
-	    <div class="row">
-	    	<div class="col-4"></div>
-	        <div class="col-4">
-	        <p>	Nom: <%= @dashboard.nom %></p>
-	        <p>	Quartier: <%= @dashboard.cartier %></p>
-	         <p> Operateur: <%= @dashboard.operateur %></p>
-	          <p> Numero: <%= @dashboard.numero %></p>
-	         <p> Reference:  <%= @dashboard.ref%></p>
-	         <p> Brut:  <%= @dashboard.brut %></p>
-	          <p> Net: <%= @dashboard.net%></p>
-	          <p> Frais Operateur: <%= @dashboard.frais_operateur %></p>
-	           <p> Autre Frais: <%= @dashboard.autre_frais%></p>
-	           <%= link_to "Edit", :controller => "dashboards", :action => "edit", :id => @dashboard.id%></div>
-	           <div class="col-4"></div>		
-	    </div>
+	<div class="row">
+	    <div class="col-4"></div>
+	    <div class="col-4">
+		<div class="card" style="width: 20rem;">
+		  <div class="card-header">
+		    <strong>Nom:</strong> <%= @dashboard.nom %>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		    <li class="list-group-item"><strong>Quartier: </strong><%= @dashboard.cartier %></li>
+		    <li class="list-group-item"><strong>Operateur: </strong><%= @dashboard.operateur %></li>
+		    <li class="list-group-item"><strong>Numero: </strong> <%= @dashboard.numero %></li>
+		    <li class="list-group-item"><strong>Reference: </strong><%= @dashboard.ref%></li>
+		    <li class="list-group-item"><strong>Brut: </strong><%= @dashboard.brut %></li>
+		    <li class="list-group-item"><strong>Net: </strong> <%= @dashboard.net%></li>
+		    <li class="list-group-item"><strong>Frais Operateur: </strong><%= @dashboard.frais_operateur %></li>
+		    <li class="list-group-item"><strong>Autre Frais: </strong> <%= @dashboard.autre_frais%></li>
+		  </ul>
+		</div>
+		<%= link_to "Edit", :controller => "dashboards", :action => "edit", :id => @dashboard.id%></div>
+	    <div class="col-4"></div>		
+	</div>
 </div>

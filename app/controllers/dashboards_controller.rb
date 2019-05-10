@@ -1,10 +1,8 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!
+  include HomeHelper
   def index
     @dashboards = Dashboard.all
-    puts "==================="
-    puts params
-    puts "==================="
   end
   def new
   	@dashboard = Dashboard.new
@@ -25,9 +23,6 @@ class DashboardsController < ApplicationController
 
   def edit
     @dashboard = Dashboard.find(params[:id])
-    puts "==================="
-  	puts params
-    puts "==================="
   end
   def update
 		@dashboard = Dashboard.find(params[:id])

@@ -3,7 +3,7 @@ module HomeHelper
 	def pourcentage(nombre, total)
 		begin
 			if total == 1 && nombre == 1
-				return 100.00
+				return 100
 			else
 				number = "#{nombre}/#{total}"
 	    		pourcentage_nombre = (Rational(*(number.split('/').map( &:to_i )))*100).to_f
@@ -14,7 +14,7 @@ module HomeHelper
 	    end
 	end
 	def show_percentage(pourcentage, title)
-	  if pourcentage >= 75 && pourcentage < 100
+	  if pourcentage >= 75 && pourcentage < 101
 	  		"<li class=\"bar teal\" style=\"height:90%;\"> <div class=\"percent\"> #{pourcentage} 
 	        <span>%</span></div><div class=\"skill\">#{title} 
 	  		</div> </li>".html_safe

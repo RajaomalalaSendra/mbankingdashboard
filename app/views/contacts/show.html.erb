@@ -1,14 +1,31 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
+<div class="row">
+	<div class="col"></div>
+	<div class="col">
 <p>
-  <strong>Nom contact:</strong>
-  <%= @contact.nom_contact %>
+  <strong>Name:</strong>
+  <%= @contact.name %>
 </p>
 
 <p>
-  <strong>Ville:</strong>
-  <%= @contact.ville %>
+  <strong>Number:</strong>
+  <%= @contact.number %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @contact.town %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @contact.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
+</div>
+<div class="col"></div>
+</div>
+</div>

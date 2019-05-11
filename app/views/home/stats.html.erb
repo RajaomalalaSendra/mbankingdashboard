@@ -21,6 +21,7 @@ telma_pourcentage = pourcentage(telma,total)
 orange_pourcentage = pourcentage(orange,total)
 autres_pourcentage = pourcentage(autres,total)%>
 <%= render 'getdate'%>
+<div class="drop">
 <div class="container top">
 <h1>The stats Tout</h1>
 <ul class="chart">
@@ -36,4 +37,5 @@ autres_pourcentage = pourcentage(autres,total)%>
  <%= show_percentage(telma_pourcentage, "Telma")%>
  <%= show_percentage(autres_pourcentage, "Autres")%>
 </ul>
+</div>
 </div>

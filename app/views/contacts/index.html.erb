@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
 <h1>Contacts</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Nom contact</th>
-      <th>Ville</th>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Town</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +19,13 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= contact.nom_contact %></td>
-        <td><%= contact.ville %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.number %></td>
+        <td><%= contact.town %></td>
+        <td><%= contact.user_id %></td>
+        <td><%= link_to 'Show', contact, :class => 'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact), :class => 'btn btn-primary' %></td>
+        <td><%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +33,8 @@
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to 'New Contact', new_contact_path, style: "text-decoration: none;"%>
+</div>
+<div class="col"></div>
+</div>
+</div>

@@ -14,8 +14,10 @@ class ContactsTest < ApplicationSystemTestCase
     visit contacts_url
     click_on "New Contact"
 
-    fill_in "Nom contact", with: @contact.nom_contact
-    fill_in "Ville", with: @contact.ville
+    fill_in "Name", with: @contact.name
+    fill_in "Number", with: @contact.number
+    fill_in "Town", with: @contact.town
+    fill_in "User id", with: @contact.user_id_id
     click_on "Create Contact"
 
     assert_text "Contact was successfully created"
@@ -26,8 +28,10 @@ class ContactsTest < ApplicationSystemTestCase
     visit contacts_url
     click_on "Edit", match: :first
 
-    fill_in "Nom contact", with: @contact.nom_contact
-    fill_in "Ville", with: @contact.ville
+    fill_in "Name", with: @contact.name
+    fill_in "Number", with: @contact.number
+    fill_in "Town", with: @contact.town
+    fill_in "User id", with: @contact.user_id_id
     click_on "Update Contact"
 
     assert_text "Contact was successfully updated"

@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nom_contact: MyString
-  ville: MyString
+  name: MyString
+  number: MyString
+  town: MyString
+  user_id: one
 
 two:
-  nom_contact: MyString
-  ville: MyString
+  name: MyString
+  number: MyString
+  town: MyString
+  user_id: two

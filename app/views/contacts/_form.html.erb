@@ -12,16 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nom_contact %>
-    <%= form.text_field :nom_contact %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :ville %>
-    <%= form.text_field :ville %>
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :town %>
+    <%= form.text_field :town %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :user_id %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-success" %>
   </div>
 <% end %>

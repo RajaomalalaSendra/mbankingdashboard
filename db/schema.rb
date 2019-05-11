@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2019_05_10_192127) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "number"
     t.string "town"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_contacts_on_user_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_192127) do
     t.integer "brut"
     t.integer "frais_operateur"
     t.integer "autre_frais"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_dashboards_on_user_id"
